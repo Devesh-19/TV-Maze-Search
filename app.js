@@ -22,9 +22,13 @@ const displayImages = shows =>
     {        
         if (result.show.image)
         {
+            const link = document.createElement("a");
+            link.href = result.show.url;
+            link.target = "_blank"
             const image = document.createElement("img");
             image.src = result.show.image.medium;
-            document.body.append(image);
+            link.appendChild(image);
+            document.body.append(link);
             images.push(image);
         }
     }
